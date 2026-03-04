@@ -19,11 +19,17 @@
     scroll-behavior: smooth;
 }
 
+html {
+    overflow-x: hidden;
+    /* prevent any element from causing horizontal scroll */
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--white);
     overflow-x: hidden;
     line-height: 1.6;
+    width: 100%;
 }
 
 /* Header & Typography */
@@ -119,6 +125,11 @@ span {
     font-size: 1.5rem;
     letter-spacing: 10px;
     color: var(--white);
+    text-align: center;
+    /* Prevent overflow on narrow screens — padding absorbs the trailing letter-gap */
+    padding: 0 20px;
+    max-width: 100%;
+    box-sizing: border-box;
     animation: glow-text 2s infinite alternate;
 }
 
@@ -1023,6 +1034,9 @@ footer {
 
     .hero-content {
         padding: 0 15px;
+        width: 100%;
+        text-align: center;
+        align-items: center;
     }
 
     .hl-line1 {
@@ -1060,11 +1074,13 @@ footer {
         border-radius: 50px;
     }
 
-    /* Section title */
+    /* Section title — tighten letter-spacing so it doesn't overflow & shift center */
     .section-title {
         font-size: 1.5rem;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         margin-bottom: 30px;
+        text-align: center;
+        width: 100%;
     }
 
     /* Cards grids */

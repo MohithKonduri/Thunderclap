@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThunderClap | Cinematic Photography & Videography</title>
+    <meta name="description"
+        content="We Don’t Shoot Moments. We Create Thunder. Premium cinematic photography and videography for weddings, corporate, and events.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("KX7oNceXnN-FMHE4m");
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="logo.png" alt="ThunderClap Logo" class="loader-logo">
+        <div class="lightning-bolt"></div>
+        <h1 class="loader-text">THUNDERCLAP</h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="ThunderClap Logo" class="nav-logo-img">
+                THUNDER<span>CLAP</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#quote" class="nav-cta">Get Quote</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="video-container">
+            <canvas id="hero-canvas"></canvas>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content container">
+            <div class="trust-badge">
+                <span class="trust-icon">&#9889;</span>
+                <span>Trusted by thousands of happy clients.</span>
+            </div>
+            <h1 class="hero-headline">
+                <span class="hl-line1">We Don’t Shoot Moments.</span>
+                <span class="hl-line2">We Create Thunder.</span>
+            </h1>
+            <p class="subtext">Weddings | Corporate | Birthdays | Concerts | Fashion | All Events</p>
+            <div class="hero-btns">
+                <a href="#our-work" class="btn btn-hero-primary">View Our Work</a>
+                <a href="#contact" class="btn btn-hero-outline">Book a Shoot</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Event Categories -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">The Spheres of <span>Thunder</span></h2>
+            <div class="category-grid">
+                <div class="category-card" data-aos="zoom-in" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800"
+                        alt="Weddings">
+                    <div class="card-content">
+                        <h3>Weddings</h3>
+                        <p>Eternalizing your symphony of love.</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="100" data-category="birthdays">
+                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&q=80&w=800"
+                        alt="Birthdays">
+                    <div class="card-content">
+                        <h3>Birthdays</h3>
+                        <p>Epic celebrations, captured forever.</p>
+                    </div>
+                </div>
+                <!-- More categories added here -->
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="200" data-category="corporate">
+                    <img src="https://images.unsplash.com/photo-1511578334221-d349624d25ac?auto=format&fit=crop&q=80&w=800"
+                        alt="Corporate">
+                    <div class="card-content">
+                        <h3>Corporate</h3>
+                        <p>Professional lens for your business power.</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="400" data-category="college">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=800"
+                        alt="College Events">
+                    <div class="card-content">
+                        <h3>College Events</h3>
+                        <p>Fueling the youth energy through our lens.</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="500" data-category="baby">
+                    <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=800"
+                        alt="Baby Shoots">
+                    <div class="card-content">
+                        <h3>Baby Shoots</h3>
+                        <p>Pure innocence, captured in a frame.</p>
+                    </div>
+                </div>
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="600" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800"
+                        alt="Fashion Shoots">
+                    <div class="card-content">
+                        <h3>Fashion Shoots</h3>
+                        <p>Style. Grace. Thunder.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-left">Visual <span>Archives</span></h2>
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Items populated via JS or manual -->
+                <div class="portfolio-item video" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600"
+                        alt="Cinema">
+                    <div class="portfolio-overlay">
+                        <span>Cinema Reel</span>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
+                        alt="Wedding">
+                    <div class="portfolio-overlay">
+                        <span>Gala Wedding</span>
+                    </div>
+                </div>
+                <!-- ... more items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Slider -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">The Magic of <span>Thunder Edit</span></h2>
+            <div class="comparison-slider" id="comparison-slider" data-aos="zoom-in">
+                <div class="image-after">
+                    <img src="comparison_after.png" alt="After Edit">
+                </div>
+                <div class="image-before">
+                    <img src="comparison_before.png" alt="Before Edit"
+                        style="filter: grayscale(1) contrast(0.8) brightness(0.8);">
+                </div>
+                <input type="range" min="0" max="100" value="50" class="slider" id="compare-slider">
+                <div class="slider-button"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why-us" class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-box" data-aos="flip-left">
+                    <i class="fas fa-video"></i>
+                    <h3>4K Cinematic Video</h3>
+                    <p>Highest resolution for breathtaking detail.</p>
+                </div>
+                <div class="feature-box" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fas fa-helicopter"></i>
+                    <h3>Drone Coverage</h3>
+                    <p>Capturing the world from a celestial perspective.</p>
+                </div>
+                <div class="feature-box" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Professional Editing</h3>
+                    <p>Turning raw footage into cinematic masterpieces.</p>
+                </div>
+                <div class="feature-box" data-aos="flip-left" data-aos-delay="300">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your memories while the energy is still fresh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant Quote Section -->
+    <section id="quote" class="quote-section">
+        <div class="container">
+            <div class="quote-card" data-aos="fade-up">
+                <h2>Instant <span>Pricing Estimator</span></h2>
+                <form id="quote-form">
+                    <div class="form-group">
+                        <label>Event Type</label>
+                        <select id="event-type">
+                            <option value="wedding">Wedding (Base $1000)</option>
+                            <option value="corporate">Corporate ($800)</option>
+                            <option value="birthday">Birthday ($500)</option>
+                            <option value="concert">Concert ($1200)</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input type="text" id="quote-other-input" class="other-input"
+                            placeholder="Describe your event...">
+                    </div>
+                    <div class="form-group">
+                        <label>Duration (Hours)</label>
+                        <input type="number" id="duration" value="4" min="1">
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="drone"> Drone Coverage (+$200)</label>
+                        <label><input type="checkbox" id="cinematic"> Cinematic Reel (+$150)</label>
+                    </div>
+                </form>
+                <div class="price-display">
+                    <h3>Estimated Total: <span id="total-price">$0</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Our Work Section -->
+    <section id="our-work" class="our-work-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title">Our <span>Work</span></h2>
+            <div class="work-video-container">
+                <iframe src="https://drive.google.com/file/d/1i8sZDpYEZ_7riCeiBE-4m1RwfZDSgCPj/preview" width="100%"
+                    height="500" allow="autoplay" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Words of <span>Thunder</span></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-right">
+                    <div class="stars">★★★★★</div>
+                    <p>"ThunderClap captured our wedding like a high-budget movie. Absolutely stunning!"</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="Client">
+                        <h4>Sarah & John</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p>"The 4K drone shots were the highlight of our corporate event. Fast delivery too!"</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="Client">
+                        <h4>Michael Chen</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-left">
+                    <div class="stars">★★★★★</div>
+                    <p>"Creative, energetic, and professional. Best fashion shoot experience ever."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="Client">
+                        <h4>Lena Styles</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Maps -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-flex">
+                <div class="contact-form-container" data-aos="fade-right">
+                    <h2 class="section-title">Get in <span>Touch</span></h2>
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="tel" name="phone" placeholder="Phone Number (10 digits)" required
+                            pattern="[6-9]{1}[0-9]{9}" maxlength="10"
+                            title="Please enter a valid 10-digit Indian phone number starting with 6-9">
+                        <select id="contact-event-type" name="event_type" required>
+                            <option value="">Event Type</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Concert">Concert</option>
+                            <option value="College Event">College Event</option>
+                            <option value="Baby Shoot">Baby Shoot</option>
+                            <option value="Fashion Shoot">Fashion Shoot</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input type="text" id="contact-other-input" name="other_details" class="other-input"
+                            placeholder="Describe your event requirement...">
+                        <textarea name="message" placeholder="Tell us about your thunderous event..."
+                            required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.241264871843!2d-73.98784368459418!3d40.75797874281267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480293%3A0x51f147b66035414!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1683100000000!5m2!1sen!2sus"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/yournumber" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <a href="#" class="footer-logo logo">
+                <img src="logo.png" alt="ThunderClap Logo" class="nav-logo-img">
+                THUNDER<span>CLAP</span>
+            </a>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2026 ThunderClap Media. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

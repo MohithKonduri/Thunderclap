@@ -644,12 +644,12 @@ section {
     }
 }
 
-/* Why Us */
-.features-grid {
+/* Why Us — the HTML uses .feature-grid (no 's') */
+.feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
 }
 
 .feature-box {
@@ -814,14 +814,15 @@ section {
     animation: fadeInDown 0.4s ease forwards;
 }
 
-/* Our Work Section Styles */
+/* Our Work Section */
 .our-work-section {
     background: #0a0a0a;
     position: relative;
     overflow: hidden;
 }
 
-.work-video-container {
+/* Our Work — 16:9 responsive video via padding-bottom trick */
+.work-video-wrapper {
     max-width: 900px;
     margin: 0 auto;
     border: 2px solid var(--accent-amber);
@@ -829,28 +830,26 @@ section {
     border-radius: 20px;
     overflow: hidden;
     background: #000;
-    line-height: 0;
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
 }
 
-.work-video-container iframe {
-    transition: transform 0.5s ease;
+.work-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
     will-change: transform;
     transform: translateZ(0);
-    /* own compositor layer — prevents sync with scroll paint */
+    transition: transform 0.5s ease;
 }
 
-.work-video-container:hover iframe {
-    transform: scale(1.02);
-}
-
-@media (max-width: 768px) {
-    .work-video-container {
-        height: 300px;
-    }
-
-    .work-video-container iframe {
-        height: 300px;
-    }
+.work-video-wrapper:hover iframe {
+    transform: scale(1.02) translateZ(0);
 }
 
 /* Footer */
@@ -937,14 +936,21 @@ footer {
 
 /* ── Comprehensive Mobile Optimization ── */
 @media (max-width: 768px) {
+
+    /* General */
+    section {
+        padding: 60px 0;
+    }
+
     #navbar {
         height: 70px;
     }
 
     .container {
-        padding: 0 20px;
+        padding: 0 16px;
     }
 
+    /* Logo */
     .logo {
         font-size: 1.1rem;
         gap: 8px;
@@ -954,10 +960,12 @@ footer {
         height: 32px;
     }
 
+    /* Hamburger */
     .hamburger {
         display: flex;
     }
 
+    /* Slide-in nav */
     .nav-links {
         position: fixed;
         top: 0;
@@ -984,6 +992,7 @@ footer {
         display: none;
     }
 
+    /* Hamburger animation */
     .hamburger.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
         background: var(--accent-amber);
@@ -998,9 +1007,10 @@ footer {
         background: var(--accent-amber);
     }
 
+    /* Hero */
     .hero {
         padding: 100px 0 60px;
-        min-height: auto;
+        min-height: 100svh;
     }
 
     .trust-badge {
@@ -1050,20 +1060,51 @@ footer {
         border-radius: 50px;
     }
 
+    /* Section title */
     .section-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        letter-spacing: 3px;
         margin-bottom: 30px;
     }
 
+    /* Cards grids */
     .category-grid,
     .portfolio-grid,
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
 
+    .category-card {
+        height: 280px;
+    }
+
+    /* Feature grid — 2 cols on tablet, 1 on phone */
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .feature-box {
+        padding: 24px 16px;
+    }
+
+    .feature-box i {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .feature-box h3 {
+        font-size: 0.9rem;
+    }
+
+    .feature-box p {
+        font-size: 0.8rem;
+    }
+
+    /* Comparison slider */
     .comparison-slider,
     .image-after {
-        height: 250px !important;
+        height: 220px !important;
     }
 
     .image-before img {
@@ -1071,17 +1112,44 @@ footer {
     }
 
     #compare-slider::-webkit-slider-thumb {
-        height: 250px !important;
+        height: 220px !important;
     }
 
+    /* Quote estimator */
     .quote-card {
-        padding: 25px 15px;
+        padding: 24px 16px;
+        border-radius: 20px;
     }
 
+    .quote-card h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    /* Contact section — stack vertically */
+    .contact-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .map-container {
+        min-height: 250px;
+    }
+
+    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+    }
+
+    /* WhatsApp button — smaller */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
     }
 }
 
@@ -1104,5 +1172,26 @@ footer {
 
     .subtext {
         font-size: 0.75rem;
+    }
+
+    /* Single column for feature grid on very small screens */
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Our work video — full width on tiny phones */
+    .work-video-wrapper {
+        border-radius: 12px;
+        border-width: 1px;
+    }
+
+    /* Comparison slider */
+    .comparison-slider,
+    .image-after {
+        height: 180px !important;
+    }
+
+    #compare-slider::-webkit-slider-thumb {
+        height: 180px !important;
     }
 }

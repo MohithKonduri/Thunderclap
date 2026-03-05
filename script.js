@@ -204,23 +204,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Instant Quote Estimator
     const eventType = document.getElementById('event-type');
     const duration = document.getElementById('duration');
-    const drone = document.getElementById('drone');
     const cinematic = document.getElementById('cinematic');
     const totalPriceDisplay = document.getElementById('total-price');
-    const pricing = { wedding: 1000, corporate: 800, birthday: 500, concert: 1200 };
+    const pricing = { reels: 400, cinematic: 800, candid: 500, 'product-event': 700 };
 
     function calculateTotal() {
         const base = pricing[eventType.value] || 500;
         const hours = parseInt(duration.value) || 0;
         let total = base + (hours * 150);
-        if (drone.checked) total += 200;
         if (cinematic.checked) total += 150;
         totalPriceDisplay.textContent = `$${total}`;
         totalPriceDisplay.classList.remove('glow-anim');
         void totalPriceDisplay.offsetWidth;
         totalPriceDisplay.classList.add('glow-anim');
     }
-    [eventType, duration, drone, cinematic].forEach(el => {
+    [eventType, duration, cinematic].forEach(el => {
         el.addEventListener('change', calculateTotal);
         el.addEventListener('input', calculateTotal);
     });
